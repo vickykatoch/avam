@@ -1,0 +1,89 @@
+{
+  "name": "apps-curator",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/apps/curator/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/packages/apps/curator",
+        "index": "packages/apps/curator/src/index.html",
+        "baseHref": "/",
+        "main": "packages/apps/curator/src/main.tsx",
+        "tsConfig": "packages/apps/curator/tsconfig.app.json",
+        "assets": [
+          "packages/apps/curator/src/favicon.ico",
+          "packages/apps/curator/src/assets"
+        ],
+        "styles": ["packages/apps/curator/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "packages/apps/curator/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/apps/curator/src/environments/environment.ts",
+              "with": "packages/apps/curator/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "apps-curator:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "apps-curator:build:development"
+        },
+        "production": {
+          "buildTarget": "apps-curator:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/apps/curator/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/apps/curator/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
