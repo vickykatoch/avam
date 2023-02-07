@@ -18,8 +18,10 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 
 1. Generate vanilla typescript lib
-npx nx generate @nrwl/js:library utils --unitTestRunner=jest --directory=packages/libs --bundler=rollup --compiler=swc --config=workspace --importPath=@avam/utils --publishable --testEnvironment=node --no-interactive --dry-run
+npx nx generate @nrwl/js:library utils --unitTestRunner=jest --directory=packages/libs --bundler=rollup --importPath=@avam/utils --includeBabelRc --publishable --no-interactive
 
 npx nx generate @nrwl/react:application curator --style=scss --directory=packages/app --routing --no-interactive --dry-run
 
 npx nx generate @nrwl/react:library themes --directory=packages/libs --buildable --bundler=rollup --importPath=@avam/themes --publishable --no-interactive --dry-run 
+
+npx nx generate @nrwl/react:component Footer --project=apps-curator --style=none --directory=/app/components --fileName=Footer --no-interactive 

@@ -8,7 +8,6 @@
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "project":"packages/libs/utils/package.json",
         "outputPath": "dist/packages/libs/utils",
         "main": "packages/libs/utils/src/index.ts",
         "tsConfig": "packages/libs/utils/tsconfig.lib.json",
