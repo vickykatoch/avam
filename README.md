@@ -17,6 +17,7 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 
+
 1. Generate vanilla typescript lib
 npx nx generate @nrwl/js:library utils --unitTestRunner=jest --directory=packages/libs --bundler=rollup --importPath=@avam/utils --includeBabelRc --publishable --no-interactive
 
