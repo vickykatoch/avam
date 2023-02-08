@@ -12,10 +12,13 @@ const classes = {
   content: `${PREFIX}-content`,
 };
 const Root = styled('div')(({ theme }) => {
-
+  const {
+    palette: { mode },
+  } = theme;
+  const isDark = mode==='dark' 
   return {
     [`&.${classes.root}`]: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.background.default,
     },
     [`& .${classes.cta}`]: {
       borderRadius: theme.shape.borderRadius,

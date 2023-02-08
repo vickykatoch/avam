@@ -1,18 +1,9 @@
-import { red } from '@mui/material/colors';
-import { createTheme } from '@mui/material/styles';
+import {  createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+
+
+export default createTheme({
   palette: {
-    primary: {
-      main: '#fff',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
-    },
+    mode: 'light'
   },
 });
-
-export default theme;

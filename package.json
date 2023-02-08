@@ -2,7 +2,9 @@
   "name": "avam",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve apps-curator"
+  },
   "private": true,
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
