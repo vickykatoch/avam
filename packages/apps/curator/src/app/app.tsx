@@ -11,19 +11,22 @@ const classes = {
   cta: `${PREFIX}-cta`,
   content: `${PREFIX}-content`,
 };
-const Root = styled('div')(({ theme }) => ({
-  [`&.${classes.root}`]: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  [`& .${classes.cta}`]: {
-    borderRadius: theme.shape.borderRadius,
-  },
-  [`& .${classes.content}`]: {
-    color: theme.palette.common.white,
-    fontSize: 16,
-    lineHeight: 1.7,
-  },
-}));
+const Root = styled('div')(({ theme }) => {
+
+  return {
+    [`&.${classes.root}`]: {
+      backgroundColor: theme.palette.primary.main,
+    },
+    [`& .${classes.cta}`]: {
+      borderRadius: theme.shape.borderRadius,
+    },
+    [`& .${classes.content}`]: {
+      color: theme.palette.common.white,
+      fontSize: 16,
+      lineHeight: 1.7,
+    },
+  };
+});
 const routes = getRoutes();
 
 export function App() {
